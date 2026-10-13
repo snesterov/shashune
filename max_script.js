@@ -688,43 +688,47 @@
           </div>
         </div>
 
-        <!-- Live Engineer Profile Card -->
-        <div class="sh-profile-card">
-          <div class="sh-profile-header">
-            <div class="sh-profile-avatar">
-              <img src="https://optim.tildacdn.com/tild3932-3331-4662-a233-306666633766/-/format/webp/kling_20260614_IMAGE.png.webp" alt="Александр Сметчик">
-            </div>
-            <div class="sh-profile-meta">
-              <h4>Александр</h4>
-              <p>Ведущий инженер-сметчик / ПТО</p>
-              <div class="sh-status">
-                <span class="sh-dot"></span> На связи в MAX и Telegram
+                <!-- Hero Card with Big Beautiful Photo of Alexander -->
+        <div class="sh-profile-card" style="padding:0; overflow:hidden; border:2px solid rgba(0,242,254,0.3); border-radius:24px; box-shadow:0 25px 60px rgba(0,0,0,0.7);">
+          <div style="position:relative; width:100%; height:320px; overflow:hidden;">
+            <img src="https://optim.tildacdn.com/tild3932-3331-4662-a233-306666633766/-/format/webp/kling_20260614_IMAGE.png.webp" style="width:100%; height:100%; object-fit:cover; object-position:center 15%; display:block;" alt="Александр Сметчик">
+            <div style="position:absolute; inset:0; background:linear-gradient(180deg, transparent 40%, rgba(18,22,34,0.95) 100%);"></div>
+            <div style="position:absolute; bottom:16px; left:20px; right:20px; display:flex; justify-content:space-between; align-items:flex-end;">
+              <div>
+                <span style="display:inline-block; padding:3px 10px; border-radius:6px; background:var(--accent-cyan); color:#000; font-size:10px; font-weight:700; text-transform:uppercase; margin-bottom:4px;">Ведущий инженер</span>
+                <h3 style="font-family:'Space Grotesk', sans-serif; font-size:22px; font-weight:700; color:#fff; line-height:1.2;">Александр</h3>
+                <p style="font-size:12px; color:var(--text-muted);">Сметчик / ПТО / Экспертиза</p>
+              </div>
+              <div class="sh-status" style="margin:0; background:rgba(0,0,0,0.6); padding:4px 10px; border-radius:20px; border:1px solid rgba(0,230,118,0.3);">
+                <span class="sh-dot"></span> <span style="font-size:11px; color:var(--accent-green);">На связи</span>
               </div>
             </div>
           </div>
-          <div class="sh-stats-grid">
-            <div class="sh-stat-box">
-              <span class="num">12+</span>
-              <span class="lbl">Лет опыта</span>
+          <div style="padding:20px;">
+            <div class="sh-stats-grid" style="margin-bottom:16px;">
+              <div class="sh-stat-box">
+                <span class="num">12+</span>
+                <span class="lbl">Лет опыта</span>
+              </div>
+              <div class="sh-stat-box">
+                <span class="num">1 400+</span>
+                <span class="lbl">Смет сдано</span>
+              </div>
+              <div class="sh-stat-box">
+                <span class="num">100%</span>
+                <span class="lbl">Экспертиза</span>
+              </div>
             </div>
-            <div class="sh-stat-box">
-              <span class="num">1 400+</span>
-              <span class="lbl">Смет сдано</span>
+            <div class="sh-channel-action-row">
+              <a href="https://max.ru/u/f9LHodD0cOIF0exFC6zS5TYTCkCTYvNG_l_FSTBtmcLhc6Gi6FycHMpx0bA" target="_blank" class="sh-act-btn sh-act-max">
+                <img src="https://cdn.jsdelivr.net/gh/snesterov/shashune@main/assets/max_logo.png" style="width:18px;height:18px;" alt="MAX">
+                <span>Связаться с Александром в MAX</span>
+              </a>
+              <a href="https://t.me/ENGINEERAlexander" target="_blank" class="sh-act-btn sh-act-tg">
+                <img src="https://cdn.jsdelivr.net/gh/snesterov/shashune@main/assets/tg_logo.png" style="width:18px;height:18px;" alt="TG">
+                <span>Написать в Telegram</span>
+              </a>
             </div>
-            <div class="sh-stat-box">
-              <span class="num">100%</span>
-              <span class="lbl">Экспертиза</span>
-            </div>
-          </div>
-          <div class="sh-channel-action-row">
-            <a href="https://max.ru/u/f9LHodD0cOIF0exFC6zS5TYTCkCTYvNG_l_FSTBtmcLhc6Gi6FycHMpx0bA" target="_blank" class="sh-act-btn sh-act-max">
-              <img src="https://cdn.jsdelivr.net/gh/snesterov/shashune@main/assets/max_logo.png" style="width:18px;height:18px;" alt="MAX">
-              <span>Связаться с Александром в MAX</span>
-            </a>
-            <a href="https://t.me/ENGINEERAlexander" target="_blank" class="sh-act-btn sh-act-tg">
-              <img src="https://cdn.jsdelivr.net/gh/snesterov/shashune@main/assets/tg_logo.png" style="width:18px;height:18px;" alt="TG">
-              <span>Написать в Telegram</span>
-            </a>
           </div>
         </div>
       </section>
@@ -848,12 +852,9 @@
       </section>
 
       
-      <!-- Compact Video Showcase -->
-      <section style="max-width: 860px; margin: 0 auto 48px; text-align: center;">
-        <div style="display:inline-flex; align-items:center; gap:8px; padding:4px 14px; border-radius:20px; background:rgba(0,242,254,0.08); border:1px solid rgba(0,242,254,0.25); font-size:12px; color:var(--accent-cyan); font-weight:600; margin-bottom:14px;">
-          <span>⚡ Визитка инженера</span>
-        </div>
-        <div style="border-radius: 22px; overflow: hidden; border: 2px solid rgba(0, 242, 254, 0.35); box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7); background: #000; aspect-ratio: 16 / 9; position: relative;">
+            <!-- Compact Mini Video at Bottom -->
+      <section style="display:flex; justify-content:center; margin: 0 auto 40px; padding: 0 20px;">
+        <div style="width: 100%; max-width: 480px; border-radius: 18px; overflow: hidden; border: 1px solid rgba(255,255,255,0.12); box-shadow: 0 10px 30px rgba(0,0,0,0.5); background: #000; aspect-ratio: 16 / 9;">
           <iframe 
             src="https://kinescope.io/embed/eLFpJ32n2N9LGMVdCr7xQa" 
             style="width: 100%; height: 100%; border: none; display: block;" 
