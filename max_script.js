@@ -848,11 +848,12 @@
       </section>
 
       
-      <!-- Kinescope Video Player Section -->
-      <section style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 22px; padding: 32px 20px; margin-bottom: 48px; text-align: center;">
-        <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 700; margin-bottom: 8px;">Видеопрезентация и рабочий процесс</h2>
-        <p style="font-size: 14px; color: var(--text-muted); max-width: 600px; margin: 0 auto 24px;">Посмотрите видео о том, как Александр готовит сметные расчеты, защищает их в экспертизе и оформляет закрывающие акты.</p>
-        <div style="max-width: 860px; margin: 0 auto; border-radius: 20px; overflow: hidden; border: 2px solid rgba(0, 242, 254, 0.35); box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6); background: #000; aspect-ratio: 16 / 9; position: relative;">
+      <!-- Compact Video Showcase -->
+      <section style="max-width: 860px; margin: 0 auto 48px; text-align: center;">
+        <div style="display:inline-flex; align-items:center; gap:8px; padding:4px 14px; border-radius:20px; background:rgba(0,242,254,0.08); border:1px solid rgba(0,242,254,0.25); font-size:12px; color:var(--accent-cyan); font-weight:600; margin-bottom:14px;">
+          <span>⚡ Визитка инженера</span>
+        </div>
+        <div style="border-radius: 22px; overflow: hidden; border: 2px solid rgba(0, 242, 254, 0.35); box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7); background: #000; aspect-ratio: 16 / 9; position: relative;">
           <iframe 
             src="https://kinescope.io/embed/eLFpJ32n2N9LGMVdCr7xQa" 
             style="width: 100%; height: 100%; border: none; display: block;" 
