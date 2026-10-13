@@ -720,7 +720,7 @@
     <!-- Hero -->
     <section class="hero">
       <div>
-        <div class="hero-badge">
+        <div class="hero-photo-preview" style="margin-bottom:16px; border-radius:16px; overflow:hidden; border:1px solid rgba(0,242,254,0.2); max-height:260px; box-shadow:0 12px 30px rgba(0,0,0,0.5);"><img src="https://cdn.jsdelivr.net/gh/snesterov/shashune@main/assets/smeta_engineer.png" style="width:100%; height:100%; object-fit:cover; display:block;" alt="Сметный инжиниринг Александр"></div><div class="hero-badge">
           <span>⚡ Сметное сопровождение по всей России (44-ФЗ / 223-ФЗ / ИЖС)</span>
         </div>
         <h2 class="hero-title">
@@ -764,7 +764,7 @@
       <!-- Live Engineer Card -->
       <div class="hero-card">
         <div class="engineer-profile">
-          <div class="engineer-avatar">👷‍♂️</div>
+          <div class="engineer-avatar" style="overflow:hidden; border:2px solid var(--accent-cyan);"><img src="https://cdn.jsdelivr.net/gh/snesterov/shashune@main/assets/hero_engineer.png" style="width:100%;height:100%;object-fit:cover;border-radius:14px;" alt="Александр Инженер"></div>
           <div class="engineer-meta">
             <h4>Александр</h4>
             <p>Ведущий инженер-сметчик / ПТО</p>
