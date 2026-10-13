@@ -764,7 +764,7 @@
       <!-- Live Engineer Card -->
       <div class="hero-card">
         <div class="engineer-profile">
-          <div class="engineer-avatar">👷‍♂️</div>
+          <div class="engineer-avatar" style="overflow:hidden; border:2px solid var(--accent-cyan); box-shadow:0 0 16px rgba(0,242,254,0.3);"><img src="https://optim.tildacdn.com/tild3932-3331-4662-a233-306666633766/-/format/webp/kling_20260614_IMAGE.png.webp" style="width:100%;height:100%;object-fit:cover;border-radius:14px;display:block;" alt="Александр"></div>
           <div class="engineer-meta">
             <h4>Александр</h4>
             <p>Ведущий инженер-сметчик / ПТО</p>
@@ -976,6 +976,21 @@
           <span class="tag">Скриншоты</span>
           <span class="tag">Шифры КСР</span>
         </div>
+      </div>
+    </section>
+
+    
+    <!-- Real Working Kinescope Video Section -->
+    <section style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 24px; padding: 32px 24px; margin-bottom: 56px; text-align: center;">
+      <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 700; margin-bottom: 8px;">Видеопрезентация и рабочий процесс</h2>
+      <p style="font-size: 14px; color: var(--text-muted); max-width: 600px; margin: 0 auto 24px;">Посмотрите видео о том, как Александр готовит сметные расчеты, защищает их в экспертизе и оформляет закрывающие акты.</p>
+      <div style="max-width: 860px; margin: 0 auto; border-radius: 20px; overflow: hidden; border: 2px solid rgba(0, 242, 254, 0.35); box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6); background: #000; aspect-ratio: 16 / 9; position: relative;">
+        <iframe 
+          src="https://kinescope.io/embed/eLFpJ32n2N9LGMVdCr7xQa" 
+          style="width: 100%; height: 100%; border: none; display: block;" 
+          allow="autoplay; fullscreen; picture-in-picture; encrypted-media;" 
+          allowfullscreen>
+        </iframe>
       </div>
     </section>
 
