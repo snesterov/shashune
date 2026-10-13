@@ -1,9 +1,8 @@
-// SHASHUNE SMETA ENGINE v2.0
-// Multi-channel lead generation: MAX, Telegram, WhatsApp & Interactive Calculator
+// SHASHUNE SMETA ENGINE v3.0
+// Features: Prominent Hero Visual, Interactive Video Showcase at Bottom, Multi-channel MAX/TG
 (function() {
   'use strict';
 
-  // 1. Inject Fonts
   if (!document.getElementById('sh-smeta-fonts')) {
     var link = document.createElement('link');
     link.id = 'sh-smeta-fonts';
@@ -12,7 +11,6 @@
     document.head.appendChild(link);
   }
 
-  // 2. Inject Scoped CSS
   if (!document.getElementById('sh-smeta-styles')) {
     var style = document.createElement('style');
     style.id = 'sh-smeta-styles';
@@ -22,7 +20,7 @@
       }
       :root {
         --bg: #090a0f;
-        --card-bg: rgba(18, 22, 34, 0.85);
+        --card-bg: rgba(18, 22, 34, 0.88);
         --card-border: rgba(255, 255, 255, 0.1);
         --accent-cyan: #00f2fe;
         --accent-blue: #4facfe;
@@ -54,7 +52,7 @@
         align-items: center;
         padding-bottom: 20px;
         border-bottom: 1px solid var(--card-border);
-        margin-bottom: 36px;
+        margin-bottom: 32px;
         flex-wrap: wrap;
         gap: 16px;
       }
@@ -105,7 +103,6 @@
         font-weight: 600;
         text-decoration: none;
         transition: all 0.2s ease;
-        border: 1px solid transparent;
       }
       .sh-btn-channel img {
         width: 18px;
@@ -115,7 +112,7 @@
       .sh-btn-max {
         background: rgba(255, 107, 53, 0.15);
         color: #ff8c5a;
-        border-color: rgba(255, 107, 53, 0.4);
+        border: 1px solid rgba(255, 107, 53, 0.4);
       }
       .sh-btn-max:hover {
         background: #ff6b35;
@@ -125,7 +122,7 @@
       .sh-btn-tg {
         background: rgba(34, 158, 217, 0.15);
         color: #38bdf8;
-        border-color: rgba(34, 158, 217, 0.4);
+        border: 1px solid rgba(34, 158, 217, 0.4);
       }
       .sh-btn-tg:hover {
         background: #229ed9;
@@ -135,18 +132,14 @@
       .sh-btn-wa {
         background: rgba(37, 211, 102, 0.15);
         color: #4ade80;
-        border-color: rgba(37, 211, 102, 0.4);
-      }
-      .sh-btn-wa:hover {
-        background: #25d366;
-        color: #fff;
+        border: 1px solid rgba(37, 211, 102, 0.4);
       }
 
-      /* Hero */
-      .sh-hero {
+      /* Hero Section with Prominent Visual */
+      .sh-hero-grid {
         display: grid;
-        grid-template-columns: 1.25fr 0.85fr;
-        gap: 40px;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 36px;
         align-items: center;
         margin-bottom: 48px;
       }
@@ -181,147 +174,52 @@
         color: var(--text-muted);
         line-height: 1.6;
         margin-bottom: 24px;
-        max-width: 580px;
       }
-      .sh-features {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
-      }
-      .sh-feature-item {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        padding: 12px 14px;
-        border-radius: 12px;
-        background: var(--card-bg);
-        border: 1px solid var(--card-border);
-      }
-      .sh-feature-item strong { font-size: 13px; }
-      .sh-feature-item span { font-size: 11px; color: var(--text-muted); display: block; }
 
-      /* Live Profile Card */
-      .sh-profile-card {
-        background: var(--card-bg);
-        border: 1px solid var(--card-border);
-        border-radius: 22px;
-        padding: 24px;
-        backdrop-filter: blur(16px);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-      }
-      .sh-profile-header {
-        display: flex;
-        align-items: center;
-        gap: 16px;
-        margin-bottom: 18px;
-        padding-bottom: 16px;
-        border-bottom: 1px solid var(--card-border);
-      }
-      .sh-profile-avatar {
-        width: 64px;
-        height: 64px;
-        border-radius: 16px;
+      /* Big Hero Photo Banner */
+      .sh-hero-banner {
+        width: 100%;
+        height: 380px;
+        border-radius: 24px;
         overflow: hidden;
-        border: 2px solid var(--accent-cyan);
-        box-shadow: 0 0 20px rgba(0, 242, 254, 0.25);
-        flex-shrink: 0;
+        position: relative;
+        border: 1px solid rgba(0, 242, 254, 0.3);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
       }
-      .sh-profile-avatar img {
+      .sh-hero-banner img {
         width: 100%;
         height: 100%;
         object-fit: cover;
       }
-      .sh-profile-meta h4 {
-        font-size: 17px;
-        font-weight: 700;
-        margin-bottom: 2px;
-      }
-      .sh-profile-meta p {
-        font-size: 12px;
-        color: var(--text-muted);
-      }
-      .sh-status {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        font-size: 11px;
-        color: var(--accent-green);
-        font-weight: 600;
-        margin-top: 4px;
-      }
-      .sh-dot {
-        width: 7px;
-        height: 7px;
-        border-radius: 50%;
-        background: var(--accent-green);
-        box-shadow: 0 0 8px var(--accent-green);
-      }
-      .sh-stats-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 8px;
-        margin-bottom: 20px;
-      }
-      .sh-stat-box {
-        background: rgba(255, 255, 255, 0.03);
-        border: 1px solid var(--card-border);
-        border-radius: 10px;
-        padding: 10px 6px;
-        text-align: center;
-      }
-      .sh-stat-box .num {
-        display: block;
-        font-family: 'Space Grotesk', sans-serif;
-        font-size: 17px;
-        font-weight: 700;
-        color: var(--accent-cyan);
-      }
-      .sh-stat-box .lbl {
-        font-size: 10px;
-        color: var(--text-muted);
-        text-transform: uppercase;
-      }
-
-      /* Multi-channel CTA Buttons */
-      .sh-channel-action-row {
+      .sh-hero-banner-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, transparent 40%, rgba(9, 10, 15, 0.95) 100%);
         display: flex;
         flex-direction: column;
-        gap: 8px;
+        justify-content: flex-end;
+        padding: 24px;
       }
-      .sh-act-btn {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        padding: 12px 16px;
-        border-radius: 12px;
-        font-size: 13px;
+      .sh-hero-banner-tag {
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 8px;
+        background: var(--accent-cyan);
+        color: #000;
+        font-size: 11px;
         font-weight: 700;
-        text-decoration: none;
-        transition: all 0.2s;
-        cursor: pointer;
-        border: none;
+        text-transform: uppercase;
+        width: fit-content;
+        margin-bottom: 6px;
       }
-      .sh-act-max {
-        background: linear-gradient(135deg, #ff6b35, #ff8c5a);
+      .sh-hero-banner-title {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 20px;
+        font-weight: 700;
         color: #fff;
-        box-shadow: 0 4px 16px rgba(255, 107, 53, 0.35);
-      }
-      .sh-act-max:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 22px rgba(255, 107, 53, 0.5);
-      }
-      .sh-act-tg {
-        background: linear-gradient(135deg, #229ed9, #0284c7);
-        color: #fff;
-        box-shadow: 0 4px 16px rgba(34, 158, 217, 0.35);
-      }
-      .sh-act-tg:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 22px rgba(34, 158, 217, 0.5);
       }
 
-      /* Interactive Section */
+      /* Interactive Section (Calculator) */
       .sh-box {
         background: var(--card-bg);
         border: 1px solid var(--card-border);
@@ -346,29 +244,6 @@
       .sh-box-title p {
         font-size: 13px;
         color: var(--text-muted);
-      }
-      .sh-tabs {
-        display: flex;
-        gap: 6px;
-        background: rgba(255, 255, 255, 0.04);
-        padding: 4px;
-        border-radius: 12px;
-      }
-      .sh-tab {
-        padding: 8px 16px;
-        border-radius: 8px;
-        border: none;
-        background: transparent;
-        color: var(--text-muted);
-        font-size: 12px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.2s;
-      }
-      .sh-tab.active {
-        background: var(--accent-cyan);
-        color: #000;
-        box-shadow: 0 2px 10px rgba(0, 242, 254, 0.3);
       }
 
       /* Calculator Grid */
@@ -496,8 +371,6 @@
         color: var(--text);
         font-weight: 600;
       }
-
-      /* Choose Platform Buttons */
       .sh-send-group {
         display: flex;
         flex-direction: column;
@@ -539,79 +412,110 @@
         color: #fff;
         box-shadow: 0 4px 14px rgba(255, 107, 53, 0.4);
       }
-      .sh-btn-send-max:hover {
-        transform: translateY(-2px);
-      }
+      .sh-btn-send-max:hover { transform: translateY(-2px); }
       .sh-btn-send-tg {
         background: linear-gradient(135deg, #229ed9, #0284c7);
         color: #fff;
         box-shadow: 0 4px 14px rgba(34, 158, 217, 0.4);
       }
-      .sh-btn-send-tg:hover {
-        transform: translateY(-2px);
-      }
+      .sh-btn-send-tg:hover { transform: translateY(-2px); }
 
-      /* File Upload Lead-Magnet Box */
-      .sh-upload-box {
-        background: rgba(255, 255, 255, 0.02);
-        border: 2px dashed rgba(0, 242, 254, 0.3);
-        border-radius: 16px;
-        padding: 24px;
-        text-align: center;
-        cursor: pointer;
-        transition: all 0.2s;
-        margin-top: 14px;
-      }
-      .sh-upload-box:hover {
-        border-color: var(--accent-cyan);
-        background: rgba(0, 242, 254, 0.04);
-      }
-      .sh-upload-box h4 {
-        font-size: 15px;
-        margin-bottom: 6px;
-      }
-      .sh-upload-box p {
-        font-size: 12px;
-        color: var(--text-muted);
-      }
-
-      /* Services 3-Grid */
-      .sh-services-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 16px;
-        margin-bottom: 48px;
-      }
-      .sh-srv-card {
+      /* Video Presentation Showcase at the Bottom */
+      .sh-video-section {
         background: var(--card-bg);
         border: 1px solid var(--card-border);
-        border-radius: 16px;
+        border-radius: 22px;
+        padding: 32px;
+        margin-bottom: 48px;
+        text-align: center;
+      }
+      .sh-video-header {
+        max-width: 650px;
+        margin: 0 auto 24px;
+      }
+      .sh-video-header h2 {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 26px;
+        font-weight: 700;
+        margin-bottom: 8px;
+      }
+      .sh-video-header p {
+        font-size: 14px;
+        color: var(--text-muted);
+      }
+      .sh-video-player-wrap {
+        max-width: 860px;
+        margin: 0 auto;
+        border-radius: 20px;
+        overflow: hidden;
+        border: 1px solid rgba(0, 242, 254, 0.3);
+        box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        background: #000;
+        position: relative;
+        aspect-ratio: 16 / 9;
+      }
+      .sh-video-player-wrap iframe,
+      .sh-video-player-wrap video {
+        width: 100%;
+        height: 100%;
+        display: block;
+        border: none;
+      }
+      .sh-video-placeholder {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #111624, #0b0e17);
         padding: 20px;
       }
-      .sh-srv-card h3 {
-        font-size: 16px;
-        margin-bottom: 8px;
+      .sh-video-play-btn {
+        width: 72px;
+        height: 72px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
         display: flex;
         align-items: center;
-        gap: 8px;
+        justify-content: center;
+        color: #000;
+        cursor: pointer;
+        box-shadow: 0 0 30px rgba(0, 242, 254, 0.5);
+        margin-bottom: 16px;
+        transition: transform 0.2s;
       }
-      .sh-srv-card p {
-        font-size: 12px;
+      .sh-video-play-btn:hover {
+        transform: scale(1.08);
+      }
+      .sh-video-play-btn svg {
+        width: 28px;
+        height: 28px;
+        fill: #000;
+        margin-left: 4px;
+      }
+
+      /* Footer Contacts */
+      .sh-footer {
+        text-align: center;
+        padding-top: 30px;
+        border-top: 1px solid var(--card-border);
+      }
+      .sh-footer p {
+        font-size: 13px;
         color: var(--text-muted);
-        line-height: 1.5;
+        margin-bottom: 16px;
       }
 
       @media (max-width: 860px) {
-        .sh-hero { grid-template-columns: 1fr; }
+        .sh-hero-grid { grid-template-columns: 1fr; }
         .sh-calc-grid { grid-template-columns: 1fr; }
-        .sh-services-grid { grid-template-columns: 1fr; }
         .sh-pills { grid-template-columns: repeat(2, 1fr); }
       }
     `;
     document.head.appendChild(style);
   }
 
-  // 3. Render Application
   function renderApp() {
     if (document.getElementById('shashune-smeta-app')) return;
 
@@ -644,8 +548,8 @@
         </div>
       </header>
 
-      <!-- Hero Section -->
-      <section class="sh-hero">
+      <!-- Hero Section with Big Photo Banner -->
+      <section class="sh-hero-grid">
         <div>
           <div class="sh-hero-badge">
             <span>⚡ Сметное сопровождение по всей России (44-ФЗ / 223-ФЗ / ИЖС)</span>
@@ -656,212 +560,157 @@
           <p class="sh-hero-desc">
             Профессиональный расчет строительных смет в актуальной ФСНБ-2022 (РИМ), ГЭСН, ФЕР и ТСН. Подготовка исполнительной документации для госзакупок и коммерческих объектов.
           </p>
-          <div class="sh-features">
-            <div class="sh-feature-item">
-              <span style="font-size:20px;">📑</span>
-              <div>
-                <strong>База ФСНБ-2022 и РИМ</strong>
-                <span>Актуальные индексы Минстроя</span>
-              </div>
-            </div>
-            <div class="sh-feature-item">
-              <span style="font-size:20px;">⚖️</span>
-              <div>
-                <strong>КАЦ по Методике 421/пр</strong>
-                <span>Сбор 3 КП поставщиков</span>
-              </div>
-            </div>
-            <div class="sh-feature-item">
-              <span style="font-size:20px;">🛡️</span>
-              <div>
-                <strong>Защита в экспертизе</strong>
-                <span>До полного согласования</span>
-              </div>
-            </div>
-            <div class="sh-feature-item">
-              <span style="font-size:20px;">⏱️</span>
-              <div>
-                <strong>Срочный расчет от 4 часов</strong>
-                <span>Когда тендер горит</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Live Engineer Profile Card -->
-        <div class="sh-profile-card">
-          <div class="sh-profile-header">
-            <div class="sh-profile-avatar">
-              <img src="https://cdn.jsdelivr.net/gh/snesterov/shashune@main/assets/hero_engineer.png" alt="Александр Сметчик">
-            </div>
-            <div class="sh-profile-meta">
-              <h4>Александр</h4>
-              <p>Ведущий инженер-сметчик / ПТО</p>
-              <div class="sh-status">
-                <span class="sh-dot"></span> На связи в MAX и Telegram
-              </div>
-            </div>
-          </div>
-          <div class="sh-stats-grid">
-            <div class="sh-stat-box">
-              <span class="num">12+</span>
-              <span class="lbl">Лет опыта</span>
-            </div>
-            <div class="sh-stat-box">
-              <span class="num">1 400+</span>
-              <span class="lbl">Смет сдано</span>
-            </div>
-            <div class="sh-stat-box">
-              <span class="num">100%</span>
-              <span class="lbl">Экспертиза</span>
-            </div>
-          </div>
-          <div class="sh-channel-action-row">
-            <a href="https://max.ru/u/f9LHodD0cOIF0exFC6zS5TYTCkCTYvNG_l_FSTBtmcLhc6Gi6FycHMpx0bA" target="_blank" class="sh-act-btn sh-act-max">
-              <img src="https://cdn.jsdelivr.net/gh/snesterov/shashune@main/assets/max_logo.png" style="width:18px;height:18px;" alt="MAX">
-              <span>Связаться с Александром в MAX</span>
+          <div style="display:flex; gap:12px; flex-wrap:wrap;">
+            <a href="https://max.ru/u/f9LHodD0cOIF0exFC6zS5TYTCkCTYvNG_l_FSTBtmcLhc6Gi6FycHMpx0bA" target="_blank" class="sh-btn-send sh-btn-send-max" style="padding:12px 20px;">
+              <img src="https://cdn.jsdelivr.net/gh/snesterov/shashune@main/assets/max_logo.png" alt="MAX">
+              <span>Связаться с инженером в MAX</span>
             </a>
-            <a href="https://t.me/ENGINEERAlexander" target="_blank" class="sh-act-btn sh-act-tg">
-              <img src="https://cdn.jsdelivr.net/gh/snesterov/shashune@main/assets/tg_logo.png" style="width:18px;height:18px;" alt="TG">
+            <a href="https://t.me/ENGINEERAlexander" target="_blank" class="sh-btn-send sh-btn-send-tg" style="padding:12px 20px;">
+              <img src="https://cdn.jsdelivr.net/gh/snesterov/shashune@main/assets/tg_logo.png" alt="TG">
               <span>Написать в Telegram</span>
             </a>
           </div>
         </div>
+
+        <!-- Big Hero Visual Kling Image -->
+        <div class="sh-hero-banner">
+          <img src="https://cdn.jsdelivr.net/gh/snesterov/shashune@main/assets/hero_engineer.png" alt="Ведущий инженер Александр">
+          <div class="sh-hero-banner-overlay">
+            <span class="sh-hero-banner-tag">Ведущий инженер-сметчик</span>
+            <div class="sh-hero-banner-title">Александр • ПТО / Сметы / Экспертиза</div>
+            <div style="font-size:12px; color:var(--accent-green); margin-top:4px;">● 12+ лет стажа | 1 400+ смет сдано</div>
+          </div>
+        </div>
       </section>
 
-      <!-- Interactive Calculator & Services -->
+      <!-- Interactive Calculator Section -->
       <section class="sh-box">
         <div class="sh-box-header">
           <div class="sh-box-title">
             <h2>Онлайн-калькулятор сметного расчета</h2>
             <p>Укажите параметры объекта и отправьте сформированное ТЗ напрямую в мессенджер</p>
           </div>
-          <div class="sh-tabs">
-            <button class="sh-tab active" onclick="window.switchTab('calc')">Калькулятор</button>
-            <button class="sh-tab" onclick="window.switchTab('audit')">Загрузить файл на аудит</button>
-          </div>
         </div>
 
-        <!-- Tab 1: Calc -->
-        <div id="tab-calc" class="sh-tab-pane">
-          <div class="sh-calc-grid">
+        <div class="sh-calc-grid">
+          <div>
+            <div class="sh-ctrl-group">
+              <label>1. Сметно-нормативная база:</label>
+              <div class="sh-pills" id="basePills">
+                <div class="sh-pill active" data-mult="1.2" onclick="window.selectPill(this)">ФСНБ-2022 (РИМ)</div>
+                <div class="sh-pill" data-mult="1.0" onclick="window.selectPill(this)">ФЕР / ТЕР</div>
+                <div class="sh-pill" data-mult="1.1" onclick="window.selectPill(this)">ГЭСН</div>
+                <div class="sh-pill" data-mult="0.9" onclick="window.selectPill(this)">Коммерческая</div>
+              </div>
+            </div>
+
+            <div class="sh-ctrl-group">
+              <div class="sh-slider-box">
+                <div class="sh-slider-head">
+                  <span>2. Объем сметы (позиций):</span>
+                  <span id="posCountDisplay">35 позиций</span>
+                </div>
+                <input type="range" id="posSlider" min="5" max="250" value="35" oninput="window.updateCalc()">
+              </div>
+            </div>
+
+            <div class="sh-ctrl-group">
+              <label>3. Необходимый пакет документов:</label>
+              <div class="sh-chks">
+                <label class="sh-chk">
+                  <input type="checkbox" id="chkKac" onchange="window.updateCalc()" checked>
+                  <span>КАЦ (Конъюнктурный анализ 421/пр)</span>
+                </label>
+                <label class="sh-chk">
+                  <input type="checkbox" id="chkKs" onchange="window.updateCalc()" checked>
+                  <span>Акты КС-2 и КС-3</span>
+                </label>
+                <label class="sh-chk">
+                  <input type="checkbox" id="chkAosr" onchange="window.updateCalc()">
+                  <span>Акты скрытых работ (АОСР)</span>
+                </label>
+                <label class="sh-chk">
+                  <input type="checkbox" id="chkDefect" onchange="window.updateCalc()">
+                  <span>Дефектная ведомость</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Result Box -->
+          <div class="sh-result-box">
             <div>
-              <div class="sh-ctrl-group">
-                <label>1. Сметно-нормативная база:</label>
-                <div class="sh-pills" id="basePills">
-                  <div class="sh-pill active" data-mult="1.2" onclick="window.selectPill(this)">ФСНБ-2022 (РИМ)</div>
-                  <div class="sh-pill" data-mult="1.0" onclick="window.selectPill(this)">ФЕР / ТЕР</div>
-                  <div class="sh-pill" data-mult="1.1" onclick="window.selectPill(this)">ГЭСН</div>
-                  <div class="sh-pill" data-mult="0.9" onclick="window.selectPill(this)">Коммерческая</div>
+              <div class="sh-price-lbl">Ориентировочная стоимость</div>
+              <div class="sh-price-val" id="totalPrice">4 800 <span>₽</span></div>
+              <div class="sh-price-time" id="timelineText">⚡ Срок подготовки: 24 часа</div>
+              <div class="sh-details-list">
+                <div class="sh-det-row">
+                  <span>База:</span>
+                  <span id="detailBase">ФСНБ-2022 (РИМ)</span>
                 </div>
-              </div>
-
-              <div class="sh-ctrl-group">
-                <div class="sh-slider-box">
-                  <div class="sh-slider-head">
-                    <span>2. Объем сметы (позиций):</span>
-                    <span id="posCountDisplay">35 позиций</span>
-                  </div>
-                  <input type="range" id="posSlider" min="5" max="250" value="35" oninput="window.updateCalc()">
+                <div class="sh-det-row">
+                  <span>Объем:</span>
+                  <span id="detailPos">35 поз.</span>
                 </div>
-              </div>
-
-              <div class="sh-ctrl-group">
-                <label>3. Необходимый пакет документов:</label>
-                <div class="sh-chks">
-                  <label class="sh-chk">
-                    <input type="checkbox" id="chkKac" onchange="window.updateCalc()" checked>
-                    <span>КАЦ (Конъюнктурный анализ 421/пр)</span>
-                  </label>
-                  <label class="sh-chk">
-                    <input type="checkbox" id="chkKs" onchange="window.updateCalc()" checked>
-                    <span>Акты КС-2 и КС-3</span>
-                  </label>
-                  <label class="sh-chk">
-                    <input type="checkbox" id="chkAosr" onchange="window.updateCalc()">
-                    <span>Акты скрытых работ (АОСР)</span>
-                  </label>
-                  <label class="sh-chk">
-                    <input type="checkbox" id="chkDefect" onchange="window.updateCalc()">
-                    <span>Дефектная ведомость</span>
-                  </label>
+                <div class="sh-det-row">
+                  <span>Опции:</span>
+                  <span id="detailOpts">Локальная смета, КАЦ, КС-2/3</span>
                 </div>
               </div>
             </div>
 
-            <!-- Result Card with Dual-Platform Send -->
-            <div class="sh-result-box">
-              <div>
-                <div class="sh-price-lbl">Ориентировочная стоимость</div>
-                <div class="sh-price-val" id="totalPrice">4 800 <span>₽</span></div>
-                <div class="sh-price-time" id="timelineText">⚡ Срок подготовки: 24 часа</div>
-                <div class="sh-details-list">
-                  <div class="sh-det-row">
-                    <span>База:</span>
-                    <span id="detailBase">ФСНБ-2022 (РИМ)</span>
-                  </div>
-                  <div class="sh-det-row">
-                    <span>Объем:</span>
-                    <span id="detailPos">35 поз.</span>
-                  </div>
-                  <div class="sh-det-row">
-                    <span>Опции:</span>
-                    <span id="detailOpts">Локальная смета, КАЦ, КС-2/3</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="sh-send-group">
-                <div class="sh-send-lbl">Отправить расчет Александру:</div>
-                <div class="sh-send-btns">
-                  <button class="sh-btn-send sh-btn-send-max" onclick="window.sendOrder('max')">
-                    <img src="https://cdn.jsdelivr.net/gh/snesterov/shashune@main/assets/max_logo.png" alt="MAX">
-                    <span>В мессенджер MAX</span>
-                  </button>
-                  <button class="sh-btn-send sh-btn-send-tg" onclick="window.sendOrder('tg')">
-                    <img src="https://cdn.jsdelivr.net/gh/snesterov/shashune@main/assets/tg_logo.png" alt="TG">
-                    <span>В Telegram</span>
-                  </button>
-                </div>
+            <div class="sh-send-group">
+              <div class="sh-send-lbl">Отправить расчет Александру:</div>
+              <div class="sh-send-btns">
+                <button class="sh-btn-send sh-btn-send-max" onclick="window.sendOrder('max')">
+                  <img src="https://cdn.jsdelivr.net/gh/snesterov/shashune@main/assets/max_logo.png" alt="MAX">
+                  <span>В мессенджер MAX</span>
+                </button>
+                <button class="sh-btn-send sh-btn-send-tg" onclick="window.sendOrder('tg')">
+                  <img src="https://cdn.jsdelivr.net/gh/snesterov/shashune@main/assets/tg_logo.png" alt="TG">
+                  <span>В Telegram</span>
+                </button>
               </div>
             </div>
           </div>
         </div>
+      </section>
 
-        <!-- Tab 2: Audit & Files -->
-        <div id="tab-audit" class="sh-tab-pane" style="display:none; text-align:center; padding:20px;">
-          <h3 style="font-size:20px; margin-bottom:8px;">Экспресс-аудит вашей сметы</h3>
-          <p style="font-size:13px; color:var(--text-muted); max-width:540px; margin:0 auto 20px;">
-            Отправьте файл в формате .gsfx, .xml, .xls или PDF чертеж напрямую в MAX или Telegram. Александр бесплатно проверит соответствие индексам Минстроя за 30 минут.
-          </p>
-          <div class="sh-send-btns" style="max-width:440px; margin:0 auto;">
-            <a href="https://max.ru/u/f9LHodD0cOIF0exFC6zS5TYTCkCTYvNG_l_FSTBtmcLhc6Gi6FycHMpx0bA" target="_blank" class="sh-btn-send sh-btn-send-max">
-              <img src="https://cdn.jsdelivr.net/gh/snesterov/shashune@main/assets/max_logo.png" alt="MAX">
-              <span>Прикрепить файл в MAX</span>
-            </a>
-            <a href="https://t.me/ENGINEERAlexander" target="_blank" class="sh-btn-send sh-btn-send-tg">
-              <img src="https://cdn.jsdelivr.net/gh/snesterov/shashune@main/assets/tg_logo.png" alt="TG">
-              <span>Прикрепить файл в Telegram</span>
-            </a>
+      <!-- Video Showcase Section at the Bottom -->
+      <section class="sh-video-section">
+        <div class="sh-video-header">
+          <h2>Видеопрезентация и рабочий процесс</h2>
+          <p>Посмотрите видеообзор: как мы готовим сметы, защищаем их в госэкспертизе и оформляем исполнительную документацию.</p>
+        </div>
+        <div class="sh-video-player-wrap" id="shVideoContainer">
+          <div class="sh-video-placeholder">
+            <div class="sh-video-play-btn" onclick="window.openVideoModal()">
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+            <div style="font-size:16px; font-weight:700; color:#fff; margin-bottom:4px;">Смотреть презентацию сметного инжиниринга</div>
+            <div style="font-size:12px; color:var(--text-muted);">Нажмите для воспроизведения видео</div>
           </div>
         </div>
       </section>
 
-      <!-- Services 3-Grid -->
-      <section class="sh-services-grid">
-        <div class="sh-srv-card">
-          <h3><span>📊</span> Сметы на все виды работ</h3>
-          <p>Строительство, благоустройство, наружные сети, капремонт, отделка, электрика и вентиляция.</p>
+      <!-- Footer Contacts -->
+      <footer class="sh-footer">
+        <p>SHASHUNE • Профессиональный сметный аутсорсинг и строительный подряд в Воронеже и по всей РФ</p>
+        <div class="sh-channels" style="justify-content:center;">
+          <a href="https://max.ru/u/f9LHodD0cOIF0exFC6zS5TYTCkCTYvNG_l_FSTBtmcLhc6Gi6FycHMpx0bA" target="_blank" class="sh-btn-channel sh-btn-max">
+            <img src="https://cdn.jsdelivr.net/gh/snesterov/shashune@main/assets/max_logo.png" alt="MAX">
+            <span>MAX</span>
+          </a>
+          <a href="https://t.me/ENGINEERAlexander" target="_blank" class="sh-btn-channel sh-btn-tg">
+            <img src="https://cdn.jsdelivr.net/gh/snesterov/shashune@main/assets/tg_logo.png" alt="Telegram">
+            <span>Telegram</span>
+          </a>
+          <a href="https://api.whatsapp.com/send/?phone=79100405052" target="_blank" class="sh-btn-channel sh-btn-wa">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c4.54 0 8.24 3.7 8.24 8.24 0 2.2-.86 4.28-2.42 5.84a8.18 8.18 0 0 1-5.82 2.41h-.01c-1.42 0-2.82-.38-4.05-1.11l-.29-.17-3.01.79.8-2.93-.19-.3a8.196 8.196 0 0 1-1.26-4.53c0-4.54 3.7-8.24 8.24-8.24zm4.51 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.24-.75-.67-1.26-1.49-1.41-1.74-.14-.25-.02-.39.11-.51.11-.11.25-.29.37-.43.13-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.34-.76-1.84-.2-.49-.4-.42-.56-.43h-.47c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.44.53.6.19 1.15.16 1.59.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.17-.48-.3z"/></svg>
+            <span>WhatsApp: +7 910 040-50-52</span>
+          </a>
         </div>
-        <div class="sh-srv-card">
-          <h3><span>📋</span> Закрывающие акты (КС-2, КС-3)</h3>
-          <p>Формирование полного пакета исполнительной документации для сдачи технадзору и заказчику.</p>
-        </div>
-        <div class="sh-srv-card">
-          <h3><span>🏗️</span> Конъюнктурный анализ (КАЦ)</h3>
-          <p>Обоснование стоимости материалов по Методике 421/пр со сбором КП, скриншотами и кодами КСР.</p>
-        </div>
-      </section>
+      </footer>
     `;
 
     var tildaRecords = document.getElementById('allrecords') || document.body;
@@ -870,7 +719,6 @@
     initInteractiveLogic();
   }
 
-  // 4. Interactive Engine
   function initInteractiveLogic() {
     window.currentMult = 1.2;
     window.currentBaseName = "ФСНБ-2022 (РИМ)";
@@ -882,15 +730,6 @@
       window.currentMult = parseFloat(el.getAttribute('data-mult'));
       window.currentBaseName = el.innerText;
       window.updateCalc();
-    };
-
-    window.switchTab = function(tabId) {
-      var tabs = document.querySelectorAll('.sh-tab');
-      for (var i = 0; i < tabs.length; i++) tabs[i].classList.remove('active');
-      if (event && event.target) event.target.classList.add('active');
-
-      document.getElementById('tab-calc').style.display = tabId === 'calc' ? 'block' : 'none';
-      document.getElementById('tab-audit').style.display = tabId === 'audit' ? 'block' : 'none';
     };
 
     window.updateCalc = function() {
@@ -937,7 +776,6 @@
 
       var text = "Приветствую, Александр! Хочу заказать смету:\nБаза: " + window.currentBaseName + "\nПозиций: ~" + count + "\nОпции: " + opts + "\nОриентировочная сумма: " + price;
 
-      // Trigger Yandex Metrika goal if installed
       if (typeof ym === 'function') {
         try { ym(window.yaCounterId || 0, 'reachGoal', 'calc_order_' + platform); } catch(e) {}
       }
@@ -946,6 +784,16 @@
         window.open("https://max.ru/u/f9LHodD0cOIF0exFC6zS5TYTCkCTYvNG_l_FSTBtmcLhc6Gi6FycHMpx0bA", '_blank');
       } else {
         window.open("https://t.me/ENGINEERAlexander?text=" + encodeURIComponent(text), '_blank');
+      }
+    };
+
+    window.openVideoModal = function() {
+      var container = document.getElementById('shVideoContainer');
+      if (window.shashuneVideoUrl) {
+        container.innerHTML = '<iframe src="' + window.shashuneVideoUrl + '?autoplay=1" allow="autoplay; fullscreen" allowfullscreen></iframe>';
+      } else {
+        // Video modal or direct player
+        alert('Для подключения видео укажите ссылку на YouTube/VK/RuTube видеохостинг.');
       }
     };
 
