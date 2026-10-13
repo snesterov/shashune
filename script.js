@@ -1,5 +1,5 @@
-// SHASHUNE SMETA ENGINE v3.0
-// Features: Prominent Hero Visual, Interactive Video Showcase at Bottom, Multi-channel MAX/TG
+// SHASHUNE SMETA ENGINE v4.0
+// Real Kling Alexander photo from /smeta, Direct working Kinescope video player, Top header logo bar
 (function() {
   'use strict';
 
@@ -20,7 +20,7 @@
       }
       :root {
         --bg: #090a0f;
-        --card-bg: rgba(18, 22, 34, 0.88);
+        --card-bg: rgba(18, 22, 34, 0.90);
         --card-border: rgba(255, 255, 255, 0.1);
         --accent-cyan: #00f2fe;
         --accent-blue: #4facfe;
@@ -42,21 +42,24 @@
       .sh-wrapper {
         max-width: 1240px;
         margin: 0 auto;
-        padding: 24px 20px 80px;
+        padding: 20px 20px 80px;
       }
 
-      /* Header */
-      .sh-header {
+      /* Top Header Bar */
+      .sh-top-header {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding-bottom: 20px;
-        border-bottom: 1px solid var(--card-border);
+        padding: 14px 20px;
+        background: rgba(18, 22, 34, 0.7);
+        border: 1px solid var(--card-border);
+        border-radius: 16px;
+        backdrop-filter: blur(12px);
         margin-bottom: 32px;
         flex-wrap: wrap;
-        gap: 16px;
+        gap: 14px;
       }
-      .sh-logo-box {
+      .sh-logo-container {
         display: flex;
         align-items: center;
         gap: 12px;
@@ -73,12 +76,14 @@
         font-weight: 700;
         font-size: 20px;
         color: #000;
-        box-shadow: 0 0 20px rgba(0, 242, 254, 0.3);
+        box-shadow: 0 0 20px rgba(0, 242, 254, 0.35);
+        flex-shrink: 0;
       }
       .sh-logo-text h1 {
         font-size: 18px;
         font-weight: 700;
         letter-spacing: -0.02em;
+        line-height: 1.2;
       }
       .sh-logo-text span {
         font-size: 11px;
@@ -87,61 +92,61 @@
         letter-spacing: 0.06em;
         font-weight: 600;
       }
-      .sh-channels {
+      .sh-header-channels {
         display: flex;
         align-items: center;
         gap: 10px;
         flex-wrap: wrap;
       }
-      .sh-btn-channel {
+      .sh-btn-top {
         display: inline-flex;
         align-items: center;
         gap: 8px;
         padding: 8px 16px;
-        border-radius: 12px;
+        border-radius: 10px;
         font-size: 13px;
         font-weight: 600;
         text-decoration: none;
         transition: all 0.2s ease;
       }
-      .sh-btn-channel img {
+      .sh-btn-top img {
         width: 18px;
         height: 18px;
         object-fit: contain;
       }
-      .sh-btn-max {
+      .sh-btn-top-max {
         background: rgba(255, 107, 53, 0.15);
         color: #ff8c5a;
         border: 1px solid rgba(255, 107, 53, 0.4);
       }
-      .sh-btn-max:hover {
+      .sh-btn-top-max:hover {
         background: #ff6b35;
         color: #fff;
         box-shadow: 0 0 16px rgba(255, 107, 53, 0.5);
       }
-      .sh-btn-tg {
+      .sh-btn-top-tg {
         background: rgba(34, 158, 217, 0.15);
         color: #38bdf8;
         border: 1px solid rgba(34, 158, 217, 0.4);
       }
-      .sh-btn-tg:hover {
+      .sh-btn-top-tg:hover {
         background: #229ed9;
         color: #fff;
         box-shadow: 0 0 16px rgba(34, 158, 217, 0.5);
       }
-      .sh-btn-wa {
+      .sh-btn-top-wa {
         background: rgba(37, 211, 102, 0.15);
         color: #4ade80;
         border: 1px solid rgba(37, 211, 102, 0.4);
       }
 
-      /* Hero Section with Prominent Visual */
+      /* Hero Section */
       .sh-hero-grid {
         display: grid;
         grid-template-columns: 1.15fr 0.85fr;
         gap: 36px;
         align-items: center;
-        margin-bottom: 48px;
+        margin-bottom: 44px;
       }
       .sh-hero-badge {
         display: inline-flex;
@@ -176,50 +181,55 @@
         margin-bottom: 24px;
       }
 
-      /* Big Hero Photo Banner */
-      .sh-hero-banner {
-        width: 100%;
-        height: 380px;
-        border-radius: 24px;
+      /* Exact Photo of Alexander Card */
+      .sh-alex-photo-card {
+        border-radius: 22px;
         overflow: hidden;
-        position: relative;
-        border: 1px solid rgba(0, 242, 254, 0.3);
+        border: 2px solid rgba(0, 242, 254, 0.35);
         box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+        background: var(--card-bg);
+        position: relative;
       }
-      .sh-hero-banner img {
+      .sh-alex-photo-card img {
         width: 100%;
-        height: 100%;
+        height: 420px;
         object-fit: cover;
+        object-position: center top;
+        display: block;
       }
-      .sh-hero-banner-overlay {
+      .sh-alex-overlay {
         position: absolute;
-        inset: 0;
-        background: linear-gradient(180deg, transparent 40%, rgba(9, 10, 15, 0.95) 100%);
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        padding: 24px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(180deg, transparent 0%, rgba(9, 10, 15, 0.95) 80%);
+        padding: 24px 20px 18px;
       }
-      .sh-hero-banner-tag {
+      .sh-alex-tag {
         display: inline-block;
-        padding: 4px 12px;
-        border-radius: 8px;
+        padding: 4px 10px;
+        border-radius: 6px;
         background: var(--accent-cyan);
         color: #000;
-        font-size: 11px;
+        font-size: 10px;
         font-weight: 700;
         text-transform: uppercase;
-        width: fit-content;
         margin-bottom: 6px;
       }
-      .sh-hero-banner-title {
+      .sh-alex-name {
         font-family: 'Space Grotesk', sans-serif;
-        font-size: 20px;
+        font-size: 22px;
         font-weight: 700;
         color: #fff;
       }
+      .sh-alex-sub {
+        font-size: 13px;
+        color: var(--accent-green);
+        font-weight: 600;
+        margin-top: 2px;
+      }
 
-      /* Interactive Section (Calculator) */
+      /* Calculator Box */
       .sh-box {
         background: var(--card-bg);
         border: 1px solid var(--card-border);
@@ -245,8 +255,6 @@
         font-size: 13px;
         color: var(--text-muted);
       }
-
-      /* Calculator Grid */
       .sh-calc-grid {
         display: grid;
         grid-template-columns: 1.25fr 0.9fr;
@@ -320,7 +328,7 @@
         font-size: 11px;
       }
 
-      /* Result Card */
+      /* Result Box */
       .sh-result-box {
         background: linear-gradient(145deg, rgba(20, 28, 48, 0.95), rgba(12, 16, 28, 0.98));
         border: 1px solid rgba(0, 242, 254, 0.25);
@@ -420,7 +428,7 @@
       }
       .sh-btn-send-tg:hover { transform: translateY(-2px); }
 
-      /* Video Presentation Showcase at the Bottom */
+      /* Working Video Section with Kinescope Iframe */
       .sh-video-section {
         background: var(--card-bg);
         border: 1px solid var(--card-border);
@@ -443,59 +451,25 @@
         font-size: 14px;
         color: var(--text-muted);
       }
-      .sh-video-player-wrap {
+      .sh-kinescope-wrap {
         max-width: 860px;
         margin: 0 auto;
         border-radius: 20px;
         overflow: hidden;
-        border: 1px solid rgba(0, 242, 254, 0.3);
-        box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        border: 2px solid rgba(0, 242, 254, 0.3);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
         background: #000;
-        position: relative;
         aspect-ratio: 16 / 9;
+        position: relative;
       }
-      .sh-video-player-wrap iframe,
-      .sh-video-player-wrap video {
+      .sh-kinescope-wrap iframe {
         width: 100%;
         height: 100%;
-        display: block;
         border: none;
-      }
-      .sh-video-placeholder {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        background: linear-gradient(135deg, #111624, #0b0e17);
-        padding: 20px;
-      }
-      .sh-video-play-btn {
-        width: 72px;
-        height: 72px;
-        border-radius: 50%;
-        background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #000;
-        cursor: pointer;
-        box-shadow: 0 0 30px rgba(0, 242, 254, 0.5);
-        margin-bottom: 16px;
-        transition: transform 0.2s;
-      }
-      .sh-video-play-btn:hover {
-        transform: scale(1.08);
-      }
-      .sh-video-play-btn svg {
-        width: 28px;
-        height: 28px;
-        fill: #000;
-        margin-left: 4px;
+        display: block;
       }
 
-      /* Footer Contacts */
+      /* Footer */
       .sh-footer {
         text-align: center;
         padding-top: 30px;
@@ -523,32 +497,32 @@
     app.id = 'shashune-smeta-app';
     app.className = 'sh-wrapper';
     app.innerHTML = `
-      <!-- Header -->
-      <header class="sh-header">
-        <div class="sh-logo-box">
+      <!-- Top Header Bar -->
+      <header class="sh-top-header">
+        <div class="sh-logo-container">
           <div class="sh-logo-badge">Ш</div>
           <div class="sh-logo-text">
             <h1>SHASHUNE / СМЕТЫ</h1>
-            <span>Инженерный аутсорсинг РФ</span>
+            <span>Инженерный аутсорсинг</span>
           </div>
         </div>
-        <div class="sh-channels">
-          <a href="https://max.ru/u/f9LHodD0cOIF0exFC6zS5TYTCkCTYvNG_l_FSTBtmcLhc6Gi6FycHMpx0bA" target="_blank" class="sh-btn-channel sh-btn-max">
+        <div class="sh-header-channels">
+          <a href="https://max.ru/u/f9LHodD0cOIF0exFC6zS5TYTCkCTYvNG_l_FSTBtmcLhc6Gi6FycHMpx0bA" target="_blank" class="sh-btn-top sh-btn-top-max">
             <img src="https://cdn.jsdelivr.net/gh/snesterov/shashune@main/assets/max_logo.png" alt="MAX">
-            <span>Мессенджер MAX</span>
+            <span>MAX</span>
           </a>
-          <a href="https://t.me/ENGINEERAlexander" target="_blank" class="sh-btn-channel sh-btn-tg">
+          <a href="https://t.me/ENGINEERAlexander" target="_blank" class="sh-btn-top sh-btn-top-tg">
             <img src="https://cdn.jsdelivr.net/gh/snesterov/shashune@main/assets/tg_logo.png" alt="Telegram">
             <span>Telegram</span>
           </a>
-          <a href="https://api.whatsapp.com/send/?phone=79100405052" target="_blank" class="sh-btn-channel sh-btn-wa">
+          <a href="https://api.whatsapp.com/send/?phone=79100405052" target="_blank" class="sh-btn-top sh-btn-top-wa">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c4.54 0 8.24 3.7 8.24 8.24 0 2.2-.86 4.28-2.42 5.84a8.18 8.18 0 0 1-5.82 2.41h-.01c-1.42 0-2.82-.38-4.05-1.11l-.29-.17-3.01.79.8-2.93-.19-.3a8.196 8.196 0 0 1-1.26-4.53c0-4.54 3.7-8.24 8.24-8.24zm4.51 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.24-.75-.67-1.26-1.49-1.41-1.74-.14-.25-.02-.39.11-.51.11-.11.25-.29.37-.43.13-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.34-.76-1.84-.2-.49-.4-.42-.56-.43h-.47c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.44.53.6.19 1.15.16 1.59.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.17-.48-.3z"/></svg>
             <span>WhatsApp</span>
           </a>
         </div>
       </header>
 
-      <!-- Hero Section with Big Photo Banner -->
+      <!-- Hero Section with Exact Kling Photo of Alexander -->
       <section class="sh-hero-grid">
         <div>
           <div class="sh-hero-badge">
@@ -563,7 +537,7 @@
           <div style="display:flex; gap:12px; flex-wrap:wrap;">
             <a href="https://max.ru/u/f9LHodD0cOIF0exFC6zS5TYTCkCTYvNG_l_FSTBtmcLhc6Gi6FycHMpx0bA" target="_blank" class="sh-btn-send sh-btn-send-max" style="padding:12px 20px;">
               <img src="https://cdn.jsdelivr.net/gh/snesterov/shashune@main/assets/max_logo.png" alt="MAX">
-              <span>Связаться с инженером в MAX</span>
+              <span>Связаться в MAX</span>
             </a>
             <a href="https://t.me/ENGINEERAlexander" target="_blank" class="sh-btn-send sh-btn-send-tg" style="padding:12px 20px;">
               <img src="https://cdn.jsdelivr.net/gh/snesterov/shashune@main/assets/tg_logo.png" alt="TG">
@@ -572,13 +546,13 @@
           </div>
         </div>
 
-        <!-- Big Hero Visual Kling Image -->
-        <div class="sh-hero-banner">
-          <img src="https://cdn.jsdelivr.net/gh/snesterov/shashune@main/assets/hero_engineer.png" alt="Ведущий инженер Александр">
-          <div class="sh-hero-banner-overlay">
-            <span class="sh-hero-banner-tag">Ведущий инженер-сметчик</span>
-            <div class="sh-hero-banner-title">Александр • ПТО / Сметы / Экспертиза</div>
-            <div style="font-size:12px; color:var(--accent-green); margin-top:4px;">● 12+ лет стажа | 1 400+ смет сдано</div>
+        <!-- Alexander Original Photo Card from /smeta -->
+        <div class="sh-alex-photo-card">
+          <img src="https://cdn.jsdelivr.net/gh/snesterov/shashune@main/assets/alexander_real.png" alt="Ведущий инженер Александр">
+          <div class="sh-alex-overlay">
+            <span class="sh-alex-tag">Ведущий инженер-сметчик</span>
+            <div class="sh-alex-name">Александр • ПТО / Сметы</div>
+            <div class="sh-alex-sub">● 12+ лет стажа | 1 400+ смет сдано</div>
           </div>
         </div>
       </section>
@@ -676,36 +650,34 @@
         </div>
       </section>
 
-      <!-- Video Showcase Section at the Bottom -->
+      <!-- Real Working Video Section at the Bottom (Kinescope embed) -->
       <section class="sh-video-section">
         <div class="sh-video-header">
           <h2>Видеопрезентация и рабочий процесс</h2>
-          <p>Посмотрите видеообзор: как мы готовим сметы, защищаем их в госэкспертизе и оформляем исполнительную документацию.</p>
+          <p>Посмотрите видео о том, как Александр готовит сметные расчеты и закрывающие акты.</p>
         </div>
-        <div class="sh-video-player-wrap" id="shVideoContainer">
-          <div class="sh-video-placeholder">
-            <div class="sh-video-play-btn" onclick="window.openVideoModal()">
-              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-            </div>
-            <div style="font-size:16px; font-weight:700; color:#fff; margin-bottom:4px;">Смотреть презентацию сметного инжиниринга</div>
-            <div style="font-size:12px; color:var(--text-muted);">Нажмите для воспроизведения видео</div>
-          </div>
+        <div class="sh-kinescope-wrap">
+          <iframe 
+            src="https://kinescope.io/embed/eLFpJ32n2N9LGMVdCr7xQa" 
+            allow="autoplay; fullscreen; picture-in-picture; encrypted-media;" 
+            allowfullscreen>
+          </iframe>
         </div>
       </section>
 
-      <!-- Footer Contacts -->
+      <!-- Footer -->
       <footer class="sh-footer">
         <p>SHASHUNE • Профессиональный сметный аутсорсинг и строительный подряд в Воронеже и по всей РФ</p>
-        <div class="sh-channels" style="justify-content:center;">
-          <a href="https://max.ru/u/f9LHodD0cOIF0exFC6zS5TYTCkCTYvNG_l_FSTBtmcLhc6Gi6FycHMpx0bA" target="_blank" class="sh-btn-channel sh-btn-max">
+        <div class="sh-header-channels" style="justify-content:center;">
+          <a href="https://max.ru/u/f9LHodD0cOIF0exFC6zS5TYTCkCTYvNG_l_FSTBtmcLhc6Gi6FycHMpx0bA" target="_blank" class="sh-btn-top sh-btn-top-max">
             <img src="https://cdn.jsdelivr.net/gh/snesterov/shashune@main/assets/max_logo.png" alt="MAX">
             <span>MAX</span>
           </a>
-          <a href="https://t.me/ENGINEERAlexander" target="_blank" class="sh-btn-channel sh-btn-tg">
+          <a href="https://t.me/ENGINEERAlexander" target="_blank" class="sh-btn-top sh-btn-top-tg">
             <img src="https://cdn.jsdelivr.net/gh/snesterov/shashune@main/assets/tg_logo.png" alt="Telegram">
             <span>Telegram</span>
           </a>
-          <a href="https://api.whatsapp.com/send/?phone=79100405052" target="_blank" class="sh-btn-channel sh-btn-wa">
+          <a href="https://api.whatsapp.com/send/?phone=79100405052" target="_blank" class="sh-btn-top sh-btn-top-wa">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c4.54 0 8.24 3.7 8.24 8.24 0 2.2-.86 4.28-2.42 5.84a8.18 8.18 0 0 1-5.82 2.41h-.01c-1.42 0-2.82-.38-4.05-1.11l-.29-.17-3.01.79.8-2.93-.19-.3a8.196 8.196 0 0 1-1.26-4.53c0-4.54 3.7-8.24 8.24-8.24zm4.51 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.24-.75-.67-1.26-1.49-1.41-1.74-.14-.25-.02-.39.11-.51.11-.11.25-.29.37-.43.13-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.34-.76-1.84-.2-.49-.4-.42-.56-.43h-.47c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.44.53.6.19 1.15.16 1.59.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.17-.48-.3z"/></svg>
             <span>WhatsApp: +7 910 040-50-52</span>
           </a>
@@ -784,16 +756,6 @@
         window.open("https://max.ru/u/f9LHodD0cOIF0exFC6zS5TYTCkCTYvNG_l_FSTBtmcLhc6Gi6FycHMpx0bA", '_blank');
       } else {
         window.open("https://t.me/ENGINEERAlexander?text=" + encodeURIComponent(text), '_blank');
-      }
-    };
-
-    window.openVideoModal = function() {
-      var container = document.getElementById('shVideoContainer');
-      if (window.shashuneVideoUrl) {
-        container.innerHTML = '<iframe src="' + window.shashuneVideoUrl + '?autoplay=1" allow="autoplay; fullscreen" allowfullscreen></iframe>';
-      } else {
-        // Video modal or direct player
-        alert('Для подключения видео укажите ссылку на YouTube/VK/RuTube видеохостинг.');
       }
     };
 
