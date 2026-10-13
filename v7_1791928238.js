@@ -19,22 +19,22 @@
     style.textContent = `
       
       /* Styling Native Tilda Form rec689290170 to match Dark-Tech Design */
-      #rec689290170 {
+      #rec689290170, #rec4768360701, [data-record-type="698"] {
         display: block !important;
         background: transparent !important;
         padding: 20px 0 60px !important;
       }
-      #rec689290170 .t-cover,
-      #rec689290170 .t-cover__carrier,
-      #rec689290170 .t-cover__wrapper {
+      #rec689290170 .t-cover, #rec4768360701 .t-cover, [data-record-type="698"] .t-cover,
+      #rec689290170 .t-cover, #rec4768360701 .t-cover, [data-record-type="698"] .t-cover__carrier,
+      #rec689290170 .t-cover, #rec4768360701 .t-cover, [data-record-type="698"] .t-cover__wrapper {
         height: auto !important;
         min-height: auto !important;
         background-image: none !important;
       }
-      #rec689290170 .t-cover__filter {
+      #rec689290170 .t-cover, #rec4768360701 .t-cover, [data-record-type="698"] .t-cover__filter {
         display: none !important;
       }
-      #rec689290170 .t698__mainwrapper {
+      #rec689290170 .t698__mainwrapper, #rec4768360701 .t698__mainwrapper, [data-record-type="698"] .t698__mainwrapper {
         background: var(--card-bg) !important;
         border: 1px solid var(--card-border) !important;
         border-radius: 22px !important;
@@ -43,7 +43,7 @@
         max-width: 680px !important;
         margin: 0 auto !important;
       }
-      #rec689290170 .t698__title {
+      #rec689290170 .t698__title, #rec4768360701 .t698__title, [data-record-type="698"] .t698__title {
         font-family: 'Space Grotesk', sans-serif !important;
         color: #ffffff !important;
         font-size: 26px !important;
@@ -51,7 +51,7 @@
         text-align: center !important;
         margin-bottom: 20px !important;
       }
-      #rec689290170 .t-input {
+      #rec689290170 .t-input, #rec4768360701 .t-input, [data-record-type="698"] .t-input {
         background: rgba(255, 255, 255, 0.05) !important;
         border: 1px solid var(--card-border) !important;
         color: #ffffff !important;
@@ -59,11 +59,11 @@
         padding: 14px 18px !important;
         font-size: 15px !important;
       }
-      #rec689290170 .t-input:focus {
+      #rec689290170 .t-input, #rec4768360701 .t-input, [data-record-type="698"] .t-input:focus {
         border-color: var(--accent-cyan) !important;
         outline: none !important;
       }
-      #rec689290170 .t-submit {
+      #rec689290170 .t-submit, #rec4768360701 .t-submit, [data-record-type="698"] .t-submit {
         background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue)) !important;
         color: #000000 !important;
         font-weight: 700 !important;
@@ -74,12 +74,12 @@
         box-shadow: 0 4px 20px rgba(0, 242, 254, 0.4) !important;
         transition: transform 0.2s, box-shadow 0.2s !important;
       }
-      #rec689290170 .t-submit:hover {
+      #rec689290170 .t-submit, #rec4768360701 .t-submit, [data-record-type="698"] .t-submit:hover {
         transform: translateY(-2px) !important;
         box-shadow: 0 6px 28px rgba(0, 242, 254, 0.6) !important;
       }
 
-      #allrecords > .r:not([data-record-type="123"]):not(#rec689290170):not(.sh-preserve) {
+      #allrecords > .r:not([data-record-type="123"]):not([data-record-type="698"]):not(#rec689290170):not(#rec4768360701):not(.sh-preserve) {
         display: none !important;
       }
       :root {
@@ -948,8 +948,8 @@
     tildaRecords.insertBefore(app, tildaRecords.firstChild);
 
     
-    // Reposition native Tilda Form rec689290170 inside our layout
-    var nativeForm = document.getElementById('rec689290170');
+    // Reposition native Tilda Form inside our layout
+    var nativeForm = document.getElementById('rec4768360701') || document.getElementById('rec689290170') || document.querySelector('[data-record-type="698"]');
     var formAnchor = document.getElementById('sh-native-form-slot');
     if (nativeForm && formAnchor) {
       formAnchor.parentNode.insertBefore(nativeForm, formAnchor);
